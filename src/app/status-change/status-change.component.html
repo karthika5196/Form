@@ -1,0 +1,26 @@
+ <div *ngFor="let change of state"><h5>Status:<a data-bs-toggle="modal" href="#exampleModal">
+  {{change.status}}
+  </a>
+</h5>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Select Status to change</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"*ngFor="let status of change.statuses">
+        <button type="button" class="btn btn-primary" id="paramsOkay" (click)="onChangeStatus(status)"
+          data-bs-dismiss="modal">{{status}}</button><br/>
+      </div>
+    </div>
+  </div>
+</div> <hr/>
+</div>
+
+<!-- <div *ngFor="let change of state">
+  {{change.status}}
+  {{change.statuses}}
+</div> -->
+
